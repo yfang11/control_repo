@@ -8,6 +8,7 @@ class minecraft (
   file { "${install_dir}/server.jar":
     ensure => file,
     source => $url,
+    verify_peer => false,
     before => Service['minecraft'],
   }
   package { 'java':
